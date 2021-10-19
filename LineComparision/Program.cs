@@ -4,7 +4,7 @@ namespace LineComparision
 {
     class Program
     {
-        static void Main(string[] args)
+        public static double CompareLine()
         {
             //Console.WriteLine("Welcome to line comparision computation program");
             //varibles declaration
@@ -44,6 +44,7 @@ namespace LineComparision
 
             //using the math class methods pow and sqrt to calculate the sqaures and square root as per the formula
             // formula is length = sqrt[(x2 -x1)^2 + (y2-y1)^2]
+
             point1 = Math.Pow((x2 - x1), 2);
             point2 = Math.Pow((y2 - y1), 2);
             len = point1 + point2;
@@ -58,15 +59,24 @@ namespace LineComparision
             Console.WriteLine("The length of line 2 is: " + length1);
             Console.WriteLine();
 
-            if (length==length1)                    // if statement for comparision
+            if (length == length1)                      // if statement for comparision bwtween the two lines
             {
                 Console.WriteLine("Both the lines are equal");
             }
+            else if (length > length1)
+            {
+                Console.WriteLine("Line 1 is greater than line 2");
+            }
             else
             {
-                Console.WriteLine("The lines aren't equal");
+                Console.WriteLine("Line 2 is greater than line 1 ");
             }
+            return 0;
+        }
 
+        static void Main(string[] args)
+        {
+            CompareLine();                  //using the user defined CompareLine method to urge the user to enter the line coordinates
         }
     }
 }
